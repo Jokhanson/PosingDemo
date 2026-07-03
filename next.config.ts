@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/PosingDemo",
+  trailingSlash: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    unoptimized: true,
   },
 };
 

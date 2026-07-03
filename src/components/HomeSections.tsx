@@ -120,7 +120,7 @@ export function CategoriesSection() {
           {categories.map((cat) => (
             <Link
               key={cat.key}
-              href={`/poses?category=${cat.key}`}
+              href="/poses"
               className="group rounded-lg border border-[#2A2A2A] bg-[#1A1A1A] p-5 transition-all hover:border-[#D4A04A]/50 hover:bg-[#1A1A1A]/80"
             >
               <h3 className="font-display text-lg font-bold text-[#F5F0EB] group-hover:text-[#D4A04A] transition-colors">
