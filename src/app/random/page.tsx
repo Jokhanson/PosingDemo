@@ -7,6 +7,8 @@ import { useFavorites } from "@/components/ThemeProvider";
 import { Shuffle, Heart, Check, Sparkles } from "lucide-react";
 import { Pose } from "@/lib/types";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function RandomPosePage() {
   const [pose, setPose] = useState<Pose | null>(null);
   const [transitioning, setTransitioning] = useState(false);
@@ -136,7 +138,7 @@ export default function RandomPosePage() {
             <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#0F0F0F]">
               <div className="absolute inset-0">
                 <Image
-                  src="/gradients/1.png"
+                  src={`${basePath}/gradients/1.png`}
                   alt=""
                   fill
                   className="animate-[flow-1_9s_linear_infinite] object-cover"
@@ -144,7 +146,7 @@ export default function RandomPosePage() {
                   unoptimized
                 />
                 <Image
-                  src="/gradients/2.png"
+                  src={`${basePath}/gradients/2.png`}
                   alt=""
                   fill
                   className="animate-[flow-2_9s_linear_infinite] object-cover"
@@ -152,7 +154,7 @@ export default function RandomPosePage() {
                   unoptimized
                 />
                 <Image
-                  src="/gradients/3.png"
+                  src={`${basePath}/gradients/3.png`}
                   alt=""
                   fill
                   className="animate-[flow-3_9s_linear_infinite] object-cover"
