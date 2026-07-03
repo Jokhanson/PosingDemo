@@ -114,7 +114,7 @@ export function HeroSection() {
           )}
         </div>
 
-        <div className="relative min-h-[50vh] lg:min-h-full lg:w-1/2">
+        <div className="hidden lg:relative lg:block lg:min-h-full lg:w-1/2">
           {hero && (
             <>
               <Image
