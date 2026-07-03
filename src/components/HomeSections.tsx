@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { getAllPoses } from "@/lib/poses";
 import { pluralPose } from "@/lib/utils";
@@ -38,12 +39,12 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="/poses" className={btnPrimary}>
+            <Link href="/poses" className={btnPrimary}>
               Смотреть позы
-            </a>
-            <a href="/random" className={btnSecondary}>
+            </Link>
+            <Link href="/random" className={btnSecondary}>
               Случайная поза
-            </a>
+            </Link>
           </div>
 
           {featured.length > 0 && (
@@ -200,7 +201,7 @@ export function CategoriesSection() {
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {categories.map((cat) => (
-            <a
+            <Link
               key={cat.key}
               href={`/poses?category=${cat.key}`}
               className="group relative block overflow-hidden rounded-lg bg-[#1A1A1A] no-underline transition-all hover:ring-1 hover:ring-[#D4A04A]/50"
@@ -225,7 +226,7 @@ export function CategoriesSection() {
                   </span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
