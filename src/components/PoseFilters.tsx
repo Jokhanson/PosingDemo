@@ -62,7 +62,7 @@ export function PoseFilters({ filters, onChange, total }: PoseFiltersProps) {
           <button
             key={cat.value}
             onClick={() => set("category", cat.value)}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               filters.category === cat.value
                 ? "bg-[#D4A04A] text-[#0F0F0F]"
                 : "bg-[#1A1A1A] text-[#A09890] hover:bg-[#2A2A2A] hover:text-[#F5F0EB]"
@@ -78,7 +78,7 @@ export function PoseFilters({ filters, onChange, total }: PoseFiltersProps) {
           <button
             key={d.value}
             onClick={() => set("difficulty", d.value)}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               filters.difficulty === d.value
                 ? "bg-[#D4A04A] text-[#0F0F0F]"
                 : "bg-[#1A1A1A] text-[#A09890] hover:bg-[#2A2A2A] hover:text-[#F5F0EB]"
@@ -87,12 +87,14 @@ export function PoseFilters({ filters, onChange, total }: PoseFiltersProps) {
             {d.label}
           </button>
         ))}
+      </div>
 
+      <div className="flex flex-wrap gap-2">
         {genders.map((g) => (
           <button
             key={g.value}
             onClick={() => set("gender", g.value)}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               filters.gender === g.value
                 ? "bg-[#D4A04A] text-[#0F0F0F]"
                 : "bg-[#1A1A1A] text-[#A09890] hover:bg-[#2A2A2A] hover:text-[#F5F0EB]"

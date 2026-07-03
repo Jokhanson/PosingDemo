@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { PoseCard } from "@/components/PoseCard";
+import { pluralPose } from "@/lib/utils";
 import { useFavorites } from "@/components/ThemeProvider";
 import { getAllPoses } from "@/lib/poses";
 import { Heart } from "lucide-react";
@@ -24,7 +25,7 @@ export default function FavoritesPage() {
         </h1>
         <p className="mt-2 text-[#A09890]">
           {poses.length
-            ? `Сохранено ${poses.length} поз`
+            ? `Сохранено ${pluralPose(poses.length)}`
             : "Здесь появятся сохранённые позы"}
         </p>
       </div>
@@ -32,7 +33,7 @@ export default function FavoritesPage() {
       {poses.length > 0 ? (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {poses.map((pose) => (
-            <PoseCard key={pose.id} pose={pose} />
+            <PoseCard key={pose.id} pose={pose} backTo="favorites" />
           ))}
         </div>
       ) : (

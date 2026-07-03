@@ -1,24 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Pose, CATEGORY_LABELS, DIFFICULTY_LABELS } from "@/lib/types";
 import { useFavorites } from "@/components/ThemeProvider";
 
 interface PoseCardProps {
   pose: Pose;
+  backTo?: string;
 }
 
-export function PoseCard({ pose }: PoseCardProps) {
+export function PoseCard({ pose, backTo }: PoseCardProps) {
   const { isFav, toggle } = useFavorites();
   const fav = isFav(pose.id);
+  const [pulse, setPulse] = useState(false);
+  const linkHref = backTo ? `/poses/${pose.id}?from=${backTo}` : `/poses/${pose.id}`;
+
+  const handleFav = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggle(pose.id);
+    setPulse(true);
+    setTimeout(() => setPulse(false), 300);
+  };
 
   return (
     <div className="group relative overflow-hidden rounded-lg bg-[#1A1A1A] transition-all duration-300 hover:ring-1 hover:ring-[#D4A04A]/50">
-      <Link href={`/poses/${pose.id}`} className="block">
+      <Link href={linkHref} className="block">
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
             src={pose.imageUrl}
@@ -32,19 +43,13 @@ export function PoseCard({ pose }: PoseCardProps) {
             <h3 className="font-display text-lg font-bold text-[#F5F0EB]">
               {pose.nameRu}
             </h3>
-            <p className="mt-1 text-xs text-[#A09890]">{pose.name}</p>
           </div>
         </div>
       </Link>
 
-      <div className="absolute right-2 top-2 flex gap-1.5">
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          onClick={(e) => {
-            e.preventDefault();
-            toggle(pose.id);
-          }}
+      <div className="absolute right-3 top-3 z-10">
+        <button
+          onClick={handleFav}
           className={`transition-all ${
             fav
               ? "text-red-400 hover:text-red-300"
@@ -52,8 +57,12 @@ export function PoseCard({ pose }: PoseCardProps) {
           }`}
           aria-label={fav ? "Убрать из избранного" : "Добавить в избранное"}
         >
-          <Heart className={`size-4 ${fav ? "fill-current" : ""}`} />
-        </Button>
+          <Heart
+            className={`size-6 drop-shadow-sm transition-transform ${
+              fav ? "fill-current" : ""
+            } ${pulse ? "animate-[pulse-heart_0.3s_ease-out]" : ""}`}
+          />
+        </button>
       </div>
 
       <div className="flex flex-wrap gap-1.5 px-4 pb-4 pt-2">

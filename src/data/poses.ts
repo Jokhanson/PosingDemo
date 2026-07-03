@@ -574,4 +574,106 @@ export const poses: Pose[] = [
     ],
     tags: ["редакционная", "минимализм", "пространство"],
   },
+
+  // === МУЖСКИЕ ===
+  {
+    id: "male-01",
+    name: "Structured Portrait",
+    nameRu: "Мужской портрет",
+    description:
+      "Strong, direct pose with square shoulders and a neutral expression. Confidence through simplicity.",
+    descriptionRu:
+      "Сильная, прямая поза с расправленными плечами и нейтральным выражением. Уверенность через простоту.",
+    category: "portrait",
+    difficulty: "easy",
+    gender: "male",
+    imageUrl:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face",
+    tips: [
+      "Плечи расправлены, спина прямая",
+      "Взгляд чуть выше объектива",
+      "Руки расслаблены вдоль тела или в карманах",
+    ],
+    tags: ["мужской", "портрет", "уверенность"],
+  },
+  {
+    id: "male-02",
+    name: "Leaning Back",
+    nameRu: "Опора назад",
+    description:
+      "Leaning against a wall with crossed arms or relaxed posture. Casual yet commanding.",
+    descriptionRu:
+      "Опора на стену со скрещёнными руками или расслабленной позой. Непринуждённо, но властно.",
+    category: "fashion",
+    difficulty: "easy",
+    gender: "male",
+    imageUrl:
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+    tips: [
+      "Одна нога слегка впереди другой",
+      "Руки не должны быть напряжены",
+      "Угол корпуса — 45° к камере",
+    ],
+    tags: ["мужской", "мода", "casual"],
+  },
+  {
+    id: "male-03",
+    name: "Walking Shot",
+    nameRu: "В движении",
+    description:
+      "Walking towards the camera with purpose. Great for lifestyle and fashion shoots.",
+    descriptionRu:
+      "Уверенная походка в сторону камеры. Отлично для lifestyle и fashion-съёмок.",
+    category: "lifestyle",
+    difficulty: "medium",
+    gender: "male",
+    imageUrl:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop",
+    tips: [
+      "Взгляд в камеру или чуть в сторону",
+      "Руки в карманах или с лёгким махом",
+      "Снимайте серийно, выберите лучший кадр",
+    ],
+    tags: ["мужской", "движение", "lifestyle"],
+  },
+  {
+    id: "male-04",
+    name: "Sitting Assertive",
+    nameRu: "Уверенная посадка",
+    description:
+      "Sitting on a chair or stool with legs apart and hands on knees. Dominant and editorial.",
+    descriptionRu:
+      "Сидя на стуле с широко расставленными ногами и руками на коленях. Доминантная редакционная поза.",
+    category: "editorial",
+    difficulty: "medium",
+    gender: "male",
+    imageUrl:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop",
+    tips: [
+      "Спина прямая, плечи расправлены",
+      "Ноги на ширине плеч",
+      "Взгляд прямой, уверенный",
+    ],
+    tags: ["мужской", "редакционная", "сидя"],
+  },
+  {
+    id: "male-05",
+    name: "Jacket Off Shoulder",
+    nameRu: "Пиджак на плече",
+    description:
+      "Drape a jacket over one shoulder for a relaxed, stylish look. Effortless cool.",
+    descriptionRu:
+      "Пиджак, наброшенный на одно плечо. Расслабленный и стильный образ.",
+    category: "fashion",
+    difficulty: "hard",
+    gender: "male",
+    imageUrl:
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop&crop=top",
+    tips: [
+      "Пиджак держите за воротник большим пальцем",
+      "Вторая рука в кармане брюк",
+      "Лёгкий наклон корпуса в сторону",
+    ],
+    tags: ["мужской", "мода", "стиль"],
+  },
 ];

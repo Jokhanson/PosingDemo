@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const isDeploy = process.env.DEPLOY_TARGET === "github-pages";
+
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/PosingDemo",
+  ...(isDeploy && { output: "export" }),
+  basePath: isDeploy ? "/PosingDemo" : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,
